@@ -1,0 +1,21 @@
+app-card-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+app-card-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+h1, p {
+    text-align: center;
+    margin-top: 40px;
+    font-weight: 300;
+    margin-bottom: -20px;
+    
+}

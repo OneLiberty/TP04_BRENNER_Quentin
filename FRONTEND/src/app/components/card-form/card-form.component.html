@@ -1,0 +1,39 @@
+<div class="modal">
+  <form [formGroup]="cardForm" (ngSubmit)="onSubmit()" class="form">
+    <div class="credit-card-info--form">
+      <div class="input_container">
+        <label for="name" class="input_label">Nom du titulaire de la carte</label>
+        <input id="name" class="input_field" formControlName="name" type="text" placeholder="Entrer votre nom" />
+        <div *ngIf="cardForm.get('name')?.invalid && cardForm.get('name')?.touched">
+          <p>Le nom est requis.</p>
+        </div>
+      </div>
+      <div class="input_container">
+        <label for="cardNumber" class="input_label">N° de carte</label>
+        <input id="cardNumber" class="input_field" formControlName="cardNumber" appFormFormat="cardNumber" type="text"
+          placeholder="0000 0000 0000 0000" maxlength="19" />
+        <div *ngIf="cardForm.get('cardNumber')?.invalid && cardForm.get('cardNumber')?.touched">
+          <p>Numéro de carte invalide.</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="input_container">
+          <label for="expirationDate" class="input_label">Date d'expiration</label>
+          <input id="expirationDate" class="input_field" formControlName="expirationDate" appFormFormat="expirationDate"
+            type="text" placeholder="01/24" maxlength="5" />
+          <div *ngIf="cardForm.get('expirationDate')?.invalid && cardForm.get('expirationDate')?.touched">
+            <p>Date d'expiration invalide.</p>
+          </div>
+        </div>
+        <div class="input_container">
+          <label for="expirationDate" class="input_label">Cryptogramme</label>
+          <input id="cvv" class="input_field" formControlName="cvv" type="text" placeholder="CVV" maxlength="3" />
+          <div *ngIf="cardForm.get('cvv')?.invalid && cardForm.get('cvv')?.touched">
+            <p>CVV invalide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="purchase--btn" [disabled]="cardForm.invalid">Checkout</button>
+  </form>
+</div>

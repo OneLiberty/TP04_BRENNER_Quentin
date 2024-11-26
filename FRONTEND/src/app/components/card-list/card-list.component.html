@@ -1,0 +1,28 @@
+<div class="visa-card" *ngFor="let carte of cartes; let i = index">
+    <div class="logoContainer">
+        <img *ngIf="carte.cardType === 'VISA'" src="./assets/visa_symbol.svg" height="50" width="50" alt="Visa logo"/>
+        <img *ngIf="carte.cardType === 'MASTERCARD'" src="./assets/mc_symbol.svg" height="50" width="50" alt="Mastercard logo"/>
+        <img *ngIf="carte.cardType === 'Unknown'" src="./assets/cb_symbol.svg" height="50" width="50" alt="CB logo"/>
+    </div>
+    <div class="number-container">
+        <label class="input-label" for="cardNumber-{{i}}">N° DE CARTE </label>
+        <p id="cardNumber-{{i}}" class="inputstyle">{{ carte.cardNumber | maskPan }}</p>
+    </div>
+
+    <div class="name-date-cvv-container">
+        <div class="name-wrapper">
+            <label class="input-label" for="cardHolder-{{i}}">NOM TITULAIRE</label>
+            <p id="cardHolder-{{i}}" class="inputstyle">{{ carte.name }}</p>
+        </div>
+
+        <div class="expiry-wrapper">
+            <label class="input-label" for="validThru-{{i}}">EXPIRE</label>
+            <p id="validThru-{{i}}" class="inputstyle">{{ carte.expirationDate }}</p>
+        </div>
+        <div class="cvv-wrapper">
+            <label class="input-label" for="cvv-{{i}}">CVV</label>
+            <p id="cvv-{{i}}" class="inputstyle"> {{ carte.cvv | maskPan }}</p>
+        </div>
+    </div>
+    <button (click)="deleteCarte(i)">Delete</button>
+</div>

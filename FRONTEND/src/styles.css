@@ -1,0 +1,9 @@
+html, body, app-root {
+    height: 100%;
+}
+
+body {
+    background-color: lightgrey;
+    font-family: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji", Symbol,"Noto Color Emoji";
+    margin: 0;
+}
