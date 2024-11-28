@@ -18,10 +18,17 @@ export class CardListComponent {
   constructor(private cardService: CardService) {
     effect(() => {
       this.cartes = this.cardService.getCartes()();
+      setTimeout(() => {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+          card.classList.add('fade-in');
+        });
+      }, 0);
     });
   }
 
   deleteCarte(index: number) {
     this.cardService.delCarte(index);
+    
   }
 }
