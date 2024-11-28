@@ -12,7 +12,7 @@ export class MaskPanPipe implements PipeTransform {
       return value.replace(/\d/g, '*'); 
     /* Mask the first 12 digits, used for the card number. */
     } else {
-      return value.replace(/\d(?=\d{4})/g, '*').replace(/.(?=.{4})/g, '*');
+      return value.replace(/.(?=.{4})/g, '*');
     }
   }
 }
