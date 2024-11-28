@@ -9,17 +9,17 @@ export const environment = {
         cardType: 'VISA'
       },
       {
-        name: 'MAURICE',
+        name: 'EM',
         cardNumber: '5234 5678 9012 3456',
         cvv: '123',
-        expirationDate: '20/20',
+        expirationDate: '08/27',
         cardType: 'MASTERCARD'
       },
       {
         name: 'EDOUDOU',
         cardNumber: '1234 5678 9012 3456',
         cvv: '123',
-        expirationDate: '00/20',
+        expirationDate: '01/20',
         cardType: 'Unknown'
       }
     ]
