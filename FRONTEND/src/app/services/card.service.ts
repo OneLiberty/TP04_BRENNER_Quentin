@@ -8,7 +8,7 @@ import { environment } from '../environment/environment';
 })
 
 export class CardService {
-  private cartesSignal = signal<Card[]>([]);
+  private readonly cartesSignal = signal<Card[]>([]);
 
   constructor() {
     environment.testCards.forEach(card => this.addCarte(card));

@@ -1,4 +1,4 @@
-<div class="visa-card" *ngFor="let carte of cartes; let i = index">
+<div class="card" *ngFor="let carte of cartes; let i = index">
     <div class="logoContainer">
         <img *ngIf="carte.cardType === 'VISA'" src="./assets/visa_symbol.svg" height="50" width="50" alt="Visa logo"/>
         <img *ngIf="carte.cardType === 'MASTERCARD'" src="./assets/mc_symbol.svg" height="50" width="50" alt="Mastercard logo"/>

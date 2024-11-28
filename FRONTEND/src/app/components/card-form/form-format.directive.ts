@@ -27,11 +27,14 @@ export class FormFormatDirective {
     this.ngControl?.control?.setValue(value);
   }
 
+  // format card number with spaces every 4 digits
   private formatCardNumber(value: string): string {
     return value.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim();
   }
+  
+  // format expiration date with a slash between month and year
   private formatExpirationDate(value: string): string {
-    value = value.replace(/[^0-9]/g, '').substring(0, 4);
+    value = value.replace(/\D/g, '').substring(0, 4);
     if (value.length > 2) {
       value = `${value.substring(0, 2)}/${value.substring(2)}`;
     }
